@@ -88,10 +88,6 @@ a {
   background: var(--red);
 }
 
-.header-phone {
-  display: none;
-}
-
 .hero {
   min-height: 100vh;
   position: relative;
@@ -204,32 +200,6 @@ a {
   color: var(--dark);
   border: 1px solid var(--line);
   background: #fff;
-}
-
-.hero-mini {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(160px, 240px));
-  gap: 14px;
-  margin-top: 34px;
-}
-
-.hero-mini div {
-  padding: 18px;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.11);
-  border: 1px solid rgba(255,255,255,0.15);
-  backdrop-filter: blur(14px);
-}
-
-.hero-mini strong {
-  display: block;
-  font-size: 14px;
-  margin-bottom: 6px;
-}
-
-.hero-mini span {
-  color: rgba(255,255,255,0.66);
-  font-size: 13px;
 }
 
 .quick-info {
@@ -501,35 +471,48 @@ a {
 }
 
 .footer {
-  padding: 60px 6%;
-  background: #fff;
-  border-top: 1px solid var(--line);
+  padding: 70px 6% 34px;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(239,35,60,0.16), transparent 32%),
+    #0c0c0f;
+  color: #fff;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-top {
   display: grid;
   grid-template-columns: 1.4fr 0.7fr 0.9fr;
-  gap: 40px;
+  gap: 60px;
   align-items: start;
 }
 
 .footer-brand img {
-  height: 58px;
-  margin-bottom: 18px;
+  width: auto;
+  height: 62px;
+  max-width: 260px;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 22px;
+  filter: brightness(0) invert(1);
 }
 
 .footer-brand p {
-  max-width: 360px;
-  color: var(--muted);
-  line-height: 1.7;
+  max-width: 430px;
+  color: rgba(255,255,255,0.62);
+  line-height: 1.8;
+  font-size: 15px;
 }
 
 .footer-column h3 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 20px;
-  margin-bottom: 18px;
+  font-size: 22px;
+  margin-bottom: 22px;
+  color: #fff;
 }
 
 .footer-column a {
   display: block;
-  color: #333;
+  color: rgba(255,255,255,0.62);
   font-weight: 800;
   margin: 12px 0;
   transition: 0.25s ease;
@@ -537,26 +520,50 @@ a {
 
 .footer-column a:hover {
   color: var(--red);
+  transform: translateX(4px);
 }
 
 .footer-phone {
-  color: var(--red) !important;
-  font-size: 28px;
+  color: #fff !important;
   font-family: 'Space Grotesk', sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  margin-bottom: 18px !important;
 }
 
-.social-link {
-  padding: 14px 16px;
-  border-radius: 16px;
-  background: #f4f1ed;
-  border: 1px solid var(--line);
+.footer-link {
+  width: fit-content;
+  padding: 12px 16px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-link:hover {
+  background: var(--red);
+  color: #fff !important;
+  transform: translateX(0) translateY(-2px);
+}
+
+.footer-bottom {
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.09);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-bottom p {
+  color: rgba(255,255,255,0.42);
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .bottom-contact {
   display: none;
 }
-
-/* PODSTRONY */
 
 .sub-hero {
   min-height: 58vh;
@@ -769,8 +776,6 @@ a {
   border-color: var(--red);
 }
 
-/* TABLET */
-
 @media (max-width: 1000px) {
   .header {
     position: relative;
@@ -832,7 +837,7 @@ a {
   .services-grid,
   .split,
   .gallery-grid,
-  .footer,
+  .footer-top,
   .offer-grid,
   .realizations-grid,
   .contact-layout {
@@ -873,11 +878,28 @@ a {
   }
 
   .footer {
-    gap: 28px;
+    padding: 54px 24px 96px;
+  }
+
+  .footer-top {
+    gap: 36px;
+  }
+
+  .footer-brand img {
+    height: 50px;
+    max-width: 220px;
+  }
+
+  .footer-phone {
+    font-size: 26px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 42px;
   }
 }
-
-/* MOBILE */
 
 @media (max-width: 560px) {
   .header {
@@ -929,11 +951,6 @@ a {
     font-size: 15px;
     line-height: 1.65;
     margin-bottom: 30px;
-  }
-
-  .hero-mini {
-    grid-template-columns: 1fr;
-    margin-top: 22px;
   }
 
   .btn-primary,
@@ -1046,11 +1063,12 @@ a {
   }
 
   .footer {
-    padding: 42px 24px 96px;
+    padding: 50px 24px 96px;
   }
 
   .footer-brand img {
     height: 46px;
+    max-width: 220px;
   }
 
   .footer-phone {

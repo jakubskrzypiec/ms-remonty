@@ -6,14 +6,24 @@ if (demoFormBtn) {
   });
 }
 
-const header = document.querySelector(".header");
+const hotspots = document.querySelectorAll(".hotspot");
 
-window.addEventListener("scroll", () => {
-  if (!header) return;
+hotspots.forEach((hotspot) => {
+  hotspot.addEventListener("click", (event) => {
+    event.stopPropagation();
 
-  if (window.scrollY > 40) {
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
-  }
+    hotspots.forEach((item) => {
+      if (item !== hotspot) {
+        item.classList.remove("active");
+      }
+    });
+
+    hotspot.classList.toggle("active");
+  });
+});
+
+document.addEventListener("click", () => {
+  hotspots.forEach((hotspot) => {
+    hotspot.classList.remove("active");
+  });
 });

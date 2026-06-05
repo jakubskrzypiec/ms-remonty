@@ -1,11 +1,3 @@
-const demoFormBtn = document.getElementById("demoFormBtn");
-
-if (demoFormBtn) {
-  demoFormBtn.addEventListener("click", () => {
-    alert("To jest formularz pokazowy. W finalnej wersji można podpiąć go pod e-mail lub formularz kontaktowy.");
-  });
-}
-
 const hotspots = document.querySelectorAll(".hotspot");
 
 hotspots.forEach((hotspot) => {
@@ -77,5 +69,38 @@ if (lightbox) {
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && lightbox) {
     lightbox.classList.remove("active");
+  }
+});
+
+const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const name = document.getElementById("contactName").value.trim();
+    const phone = document.getElementById("contactPhone").value.trim();
+    const message = document.getElementById("contactMessage").value.trim();
+
+    const subject = encodeURIComponent("Zapytanie ze strony MS Remonty");
+    const body = encodeURIComponent(
+      `Imię i nazwisko: ${name}\nTelefon: ${phone}\n\nZakres prac:\n${message}`
+    );
+
+    window.location.href = `mailto:mateusz.szczecina@gmail.com?subject=${subject}&body=${body}`;
+  });
+}
+
+window.addEventListener("load", () => {
+  const loader = document.getElementById("pageLoader");
+
+  if (loader) {
+    setTimeout(() => {
+      loader.classList.add("hidden");
+    }, 900);
+
+    setTimeout(() => {
+      loader.remove();
+    }, 1800);
   }
 });

@@ -94,13 +94,13 @@ if (contactForm) {
 window.addEventListener("load", () => {
   const loader = document.getElementById("pageLoader");
 
-  if (loader) {
-    setTimeout(() => {
-      loader.classList.add("hidden");
-    }, 900);
+  if (!loader) return;
 
-    setTimeout(() => {
-      loader.remove();
-    }, 1800);
-  }
+  setTimeout(() => {
+    loader.classList.add("hidden");
+  }, 900);
+
+  setTimeout(() => {
+    loader.remove();
+  }, 1800);
 });

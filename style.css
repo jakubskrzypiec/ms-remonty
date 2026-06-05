@@ -698,9 +698,7 @@ a {
   font-weight: 700;
 }
 
-.bottom-contact {
-  display: none;
-}
+
 
 /* SUBPAGES */
 
@@ -1271,43 +1269,7 @@ a {
     line-height: 1.7;
   }
 
-  .bottom-contact {
-    position: fixed;
-    left: 14px;
-    right: 14px;
-    bottom: 14px;
-    z-index: 120;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    padding: 9px;
-    border-radius: 999px;
-    background: rgba(255,255,255,0.9);
-    backdrop-filter: blur(18px);
-    border: 1px solid rgba(0,0,0,0.08);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.18);
-  }
-
-  .bottom-contact a {
-    min-height: 46px;
-    border-radius: 999px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 900;
-    font-size: 13px;
-  }
-
-  .bottom-contact a:first-child {
-    background: var(--red);
-    color: #fff;
-  }
-
-  .bottom-contact a:last-child {
-    background: #111;
-    color: #fff;
-  }
-}
+  
 /* LOADER */
 
 .page-loader {

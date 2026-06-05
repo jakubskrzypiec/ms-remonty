@@ -41,6 +41,8 @@ a {
   transform: translateY(0);
 }
 
+/* HEADER */
+
 .header {
   position: fixed;
   top: 18px;
@@ -88,6 +90,8 @@ a {
   background: var(--red);
 }
 
+/* HERO */
+
 .hero {
   min-height: 100vh;
   position: relative;
@@ -128,7 +132,8 @@ a {
 .eyebrow,
 .section-title span,
 .split-text span,
-.cta span {
+.cta span,
+.google-card span {
   display: inline-block;
   color: var(--red);
   font-size: 13px;
@@ -161,6 +166,8 @@ a {
   flex-wrap: wrap;
 }
 
+/* BUTTONS */
+
 .btn-primary,
 .btn-secondary {
   min-height: 54px;
@@ -172,6 +179,9 @@ a {
   font-size: 14px;
   font-weight: 900;
   transition: 0.25s ease;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
 }
 
 .btn-primary {
@@ -202,6 +212,8 @@ a {
   background: #fff;
 }
 
+/* QUICK INFO */
+
 .quick-info {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -229,6 +241,8 @@ a {
   color: var(--muted);
 }
 
+/* SECTIONS */
+
 .section {
   padding: 110px 6%;
 }
@@ -240,7 +254,8 @@ a {
 
 .section-title h2,
 .split-text h2,
-.cta h2 {
+.cta h2,
+.google-card h2 {
   font-family: 'Space Grotesk', sans-serif;
   font-size: clamp(36px, 5vw, 64px);
   line-height: 1;
@@ -248,12 +263,15 @@ a {
 }
 
 .section-title p,
-.cta p {
+.cta p,
+.google-card p {
   margin-top: 20px;
   color: var(--muted);
   font-size: 17px;
   line-height: 1.8;
 }
+
+/* SERVICES */
 
 .services-grid {
   display: grid;
@@ -275,19 +293,22 @@ a {
   box-shadow: var(--shadow);
 }
 
-.service-card span {
+.service-card span,
+.process-card span {
   color: var(--red);
   font-weight: 900;
   font-size: 13px;
 }
 
-.service-card h3 {
+.service-card h3,
+.process-card h3 {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 24px;
   margin: 20px 0 12px;
 }
 
-.service-card p {
+.service-card p,
+.process-card p {
   color: var(--muted);
   line-height: 1.7;
 }
@@ -296,6 +317,49 @@ a {
   margin-top: 40px;
   text-align: center;
 }
+
+/* PROCESS */
+
+.process-section {
+  padding: 110px 6%;
+  background:
+    radial-gradient(circle at 8% 10%, rgba(239,35,60,0.09), transparent 30%),
+    #111;
+  color: #fff;
+}
+
+.compact-process {
+  padding-top: 95px;
+}
+
+.process-section .section-title p {
+  color: rgba(255,255,255,0.65);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.process-card {
+  padding: 30px 26px;
+  border-radius: 28px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: 0.25s ease;
+}
+
+.process-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255,255,255,0.1);
+}
+
+.process-card p {
+  color: rgba(255,255,255,0.65);
+}
+
+/* HOUSE MAP */
 
 .house-section {
   padding: 110px 0 80px;
@@ -383,6 +447,8 @@ a {
 .hotspot-floor { top: 66%; left: 44%; }
 .hotspot-stairs { top: 21%; left: 72%; }
 
+/* SPLIT */
+
 .split {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -419,6 +485,8 @@ a {
   font-weight: 800;
 }
 
+/* GALLERY */
+
 .gallery-preview {
   background: #fff;
 }
@@ -436,11 +504,78 @@ a {
   border-radius: 28px;
   box-shadow: 0 18px 45px rgba(0,0,0,0.08);
   transition: 0.25s ease;
+  cursor: zoom-in;
 }
 
 .gallery-grid img:hover {
   transform: scale(1.025);
 }
+
+/* LIGHTBOX */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.86);
+  z-index: 300;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 26px;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: min(1100px, 95vw);
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: 24px;
+  box-shadow: 0 30px 100px rgba(0,0,0,0.45);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 22px;
+  right: 26px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  color: #111;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* GOOGLE SECTION */
+
+.google-section {
+  padding: 100px 6%;
+  background: #f7f4ef;
+}
+
+.google-card {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 58px;
+  border-radius: 38px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(239,35,60,0.12), transparent 34%),
+    #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 22px 60px rgba(0,0,0,0.08);
+}
+
+.google-card p {
+  max-width: 760px;
+  margin-bottom: 28px;
+}
+
+/* CTA */
 
 .cta {
   padding: 110px 6%;
@@ -469,6 +604,8 @@ a {
 .cta-buttons {
   justify-content: center;
 }
+
+/* FOOTER */
 
 .footer {
   padding: 70px 6% 34px;
@@ -565,6 +702,8 @@ a {
   display: none;
 }
 
+/* SUBPAGES */
+
 .sub-hero {
   min-height: 58vh;
   padding: 160px 6% 80px;
@@ -614,6 +753,8 @@ a {
   max-width: 720px;
 }
 
+/* OFFER */
+
 .offer-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -662,6 +803,8 @@ a {
   line-height: 1.7;
 }
 
+/* REALIZATIONS */
+
 .realizations-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -674,6 +817,7 @@ a {
   border-radius: 30px;
   min-height: 330px;
   box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+  cursor: zoom-in;
 }
 
 .realization-card img {
@@ -711,6 +855,8 @@ a {
   line-height: 1.5;
 }
 
+/* CONTACT */
+
 .contact-layout {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
@@ -723,7 +869,8 @@ a {
 }
 
 .contact-item,
-.contact-box {
+.contact-box,
+.contact-note {
   padding: 30px;
   border-radius: 30px;
   background: #fff;
@@ -744,6 +891,21 @@ a {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 28px;
   margin-top: 12px;
+}
+
+.contact-note h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.contact-note p {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.small-title {
+  margin-bottom: 30px;
 }
 
 .form-grid {
@@ -775,6 +937,8 @@ a {
 .form-group textarea:focus {
   border-color: var(--red);
 }
+
+/* RESPONSIVE */
 
 @media (max-width: 1000px) {
   .header {
@@ -835,6 +999,7 @@ a {
 
   .quick-info,
   .services-grid,
+  .process-grid,
   .split,
   .gallery-grid,
   .footer-top,
@@ -851,7 +1016,9 @@ a {
 
   .section,
   .cta,
-  .house-section {
+  .house-section,
+  .process-section,
+  .google-section {
     padding-left: 24px;
     padding-right: 24px;
   }
@@ -875,6 +1042,10 @@ a {
 
   .sub-hero {
     padding: 90px 24px 70px;
+  }
+
+  .google-card {
+    padding: 38px 26px;
   }
 
   .footer {
@@ -934,7 +1105,8 @@ a {
   .eyebrow,
   .section-title span,
   .split-text span,
-  .cta span {
+  .cta span,
+  .google-card span {
     font-size: 11px;
     letter-spacing: 0.16em;
     margin-bottom: 16px;
@@ -977,25 +1149,34 @@ a {
     padding-bottom: 78px;
   }
 
+  .process-section,
+  .google-section {
+    padding-top: 78px;
+    padding-bottom: 78px;
+  }
+
   .section-title {
     margin-bottom: 38px;
   }
 
   .section-title h2,
   .split-text h2,
-  .cta h2 {
+  .cta h2,
+  .google-card h2 {
     font-size: 36px;
     line-height: 1.05;
     letter-spacing: -1.5px;
   }
 
   .section-title p,
-  .cta p {
+  .cta p,
+  .google-card p {
     font-size: 15px;
     line-height: 1.7;
   }
 
-  .service-card {
+  .service-card,
+  .process-card {
     padding: 28px 24px;
     border-radius: 24px;
   }

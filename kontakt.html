@@ -15,6 +15,15 @@
 
 <body>
 
+<div class="page-loader" id="pageLoader">
+  <div class="loader-bg"></div>
+
+  <div class="loader-content">
+    <img src="logo.png" alt="MS Remonty">
+    <span>Remonty i wykończenia wnętrz</span>
+  </div>
+</div>
+
 <header class="header">
   <a href="index.html" class="logo">
     <img src="logo.png" alt="MS Remonty">
@@ -35,7 +44,7 @@
     <span class="eyebrow">Kontakt</span>
     <h1>Skontaktuj się i omów zakres prac</h1>
     <p>
-      Zadzwoń albo zostaw wiadomość w formularzu pokazowym. Najszybciej ustalić szczegóły telefonicznie.
+      Zadzwoń albo wyślij wiadomość mailową przez formularz. Najszybciej ustalić szczegóły telefonicznie.
     </p>
   </div>
 </section>
@@ -47,6 +56,11 @@
       <div class="contact-item reveal">
         <span>Telefon</span>
         <strong><a href="tel:531955933">531 955 933</a></strong>
+      </div>
+
+      <div class="contact-item reveal">
+        <span>E-mail</span>
+        <strong><a href="mailto:mateusz.szczecina@gmail.com">mateusz.szczecina@gmail.com</a></strong>
       </div>
 
       <div class="contact-item reveal">
@@ -73,27 +87,27 @@
         <span>Formularz</span>
         <h2>Napisz kilka szczegółów</h2>
         <p>
-          Formularz jest pokazowy. Po finalnym wdrożeniu można podpiąć go pod e-mail lub zastąpić szybkim kontaktem telefonicznym.
+          Po kliknięciu przycisku otworzy się gotowa wiadomość e-mail do MS Remonty.
         </p>
       </div>
 
-      <form class="form-grid">
+      <form class="form-grid" id="contactForm">
         <div class="form-group">
           <label>Imię i nazwisko</label>
-          <input type="text" placeholder="Jan Kowalski">
+          <input type="text" id="contactName" placeholder="Jan Kowalski" required>
         </div>
 
         <div class="form-group">
           <label>Telefon</label>
-          <input type="tel" placeholder="Twój numer telefonu">
+          <input type="tel" id="contactPhone" placeholder="Twój numer telefonu" required>
         </div>
 
         <div class="form-group">
           <label>Zakres prac</label>
-          <textarea rows="5" placeholder="Np. remont łazienki, panele, malowanie, wykończenie mieszkania..."></textarea>
+          <textarea id="contactMessage" rows="5" placeholder="Np. remont łazienki, panele, malowanie, wykończenie mieszkania..." required></textarea>
         </div>
 
-        <button type="button" class="btn-primary" id="demoFormBtn">Wyślij zapytanie</button>
+        <button type="submit" class="btn-primary">Wyślij zapytanie</button>
       </form>
     </div>
 
@@ -102,13 +116,13 @@
 
 <section class="google-section">
   <div class="google-card reveal">
-    <span>Google</span>
-    <h2>Strona gotowa do podpięcia pod wizytówkę Google.</h2>
+    <span>Kontakt online</span>
+    <h2>Strona gotowa do dodania w Google.</h2>
     <p>
-      Po publikacji można dodać link do strony w wizytówce Google, aby klienci łatwo trafiali
-      z wyszukiwarki do oferty, realizacji i kontaktu.
+      Po opublikowaniu strony można wkleić jej link do wizytówki Google firmy.
+      Dzięki temu klienci z wyszukiwarki od razu trafią do oferty, realizacji i kontaktu.
     </p>
-    <a href="tel:531955933" class="btn-primary">Zadzwoń</a>
+    <a href="mailto:mateusz.szczecina@gmail.com" class="btn-primary">Napisz e-mail</a>
   </div>
 </section>
 
@@ -133,7 +147,7 @@
     <div class="footer-column">
       <h3>Kontakt</h3>
       <a href="tel:531955933" class="footer-phone">531 955 933</a>
-      <a href="#" class="footer-link">Facebook</a>
+      <a href="mailto:mateusz.szczecina@gmail.com" class="footer-link">E-mail</a>
       <a href="#" class="footer-link">Google Maps</a>
     </div>
   </div>
@@ -146,7 +160,7 @@
 
 <div class="bottom-contact">
   <a href="tel:531955933">Zadzwoń</a>
-  <a href="kontakt.html">Kontakt</a>
+  <a href="mailto:mateusz.szczecina@gmail.com">E-mail</a>
 </div>
 
 <script src="script.js"></script>

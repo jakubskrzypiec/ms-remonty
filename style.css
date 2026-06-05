@@ -1445,3 +1445,117 @@ a {
     width: 100%;
   }
 }
+/* FINAL MOBILE FIX - CONTACT */
+
+@media (max-width: 700px) {
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .section {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .contact-layout {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+  }
+
+  .contact-data,
+  .contact-box {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .contact-item,
+  .contact-note,
+  .contact-box {
+    width: 100%;
+    max-width: 100%;
+    padding: 22px 18px;
+    border-radius: 22px;
+    overflow: hidden;
+  }
+
+  .contact-item {
+    margin-bottom: 16px;
+  }
+
+  .contact-item strong {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    font-size: 22px;
+    line-height: 1.15;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-item strong a {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-box {
+    margin-top: 18px;
+  }
+
+  .contact-box .section-title {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 26px;
+  }
+
+  .contact-box .section-title h2 {
+    font-size: 28px;
+    line-height: 1.05;
+    letter-spacing: -0.8px;
+    max-width: 100%;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  .contact-box .section-title p {
+    font-size: 15px;
+    line-height: 1.55;
+    max-width: 100%;
+  }
+
+  .form-grid,
+  .form-group,
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .form-group label {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    display: block;
+    font-size: 15px;
+    padding: 14px 13px;
+    border-radius: 16px;
+  }
+
+  .form-group textarea {
+    min-height: 130px;
+    resize: vertical;
+  }
+
+  .contact-box .btn-primary {
+    width: 100%;
+    max-width: 100%;
+  }
+}

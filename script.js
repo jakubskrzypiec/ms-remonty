@@ -43,3 +43,39 @@ const revealObserver = new IntersectionObserver((entries) => {
 revealElements.forEach((element) => {
   revealObserver.observe(element);
 });
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxClose = document.getElementById("lightboxClose");
+
+const galleryImages = document.querySelectorAll(".gallery-item, .gallery-card img");
+
+galleryImages.forEach((image) => {
+  image.addEventListener("click", () => {
+    if (!lightbox || !lightboxImage) return;
+
+    lightboxImage.src = image.src;
+    lightboxImage.alt = image.alt;
+    lightbox.classList.add("active");
+  });
+});
+
+if (lightboxClose) {
+  lightboxClose.addEventListener("click", () => {
+    lightbox.classList.remove("active");
+  });
+}
+
+if (lightbox) {
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+      lightbox.classList.remove("active");
+    }
+  });
+}
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && lightbox) {
+    lightbox.classList.remove("active");
+  }
+});
